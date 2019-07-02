@@ -1,4 +1,4 @@
-import { Client } from 'elasticsearch';
+import { Client } from '@elastic/elasticsearch';
 import { ELASTICSEARCH_MODULE_OPTIONS } from './elasticsearch.constants';
 import { ElasticsearchModuleOptions } from './interfaces';
 

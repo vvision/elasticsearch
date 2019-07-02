@@ -31,7 +31,7 @@ Elasticsearch module for [Nest](https://github.com/nestjs/nest) based on the off
 ## Installation
 
 ```bash
-$ npm i --save @nestjs/elasticsearch elasticsearch @types/elasticsearch
+$ npm i --save @nestjs/elasticsearch @elastic/elasticsearch @types/elasticsearch
 ```
 
 ## Usage
@@ -114,7 +114,7 @@ It works the same as `useClass` with one critical difference - `ElasticsearchMod
 
 ## API Spec
 
-The `ElasticsearchService` exposes native [elasticsearch](https://www.npmjs.com/package/elasticsearch) methods and wraps them in the Observable, [read more](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html). The `ElasticsearchModule.register()` takes `options` object as an argument, [read more](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/client-configuration.html).
+The `ElasticsearchService` exposes native [elasticsearch](https://www.npmjs.com/package/@elastic/elasticsearch) methods and wraps them in the Observable, [read more](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html). The `ElasticsearchModule.register()` takes `options` object as an argument, [read more](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/client-configuration.html).
 
 ## Support
 

@@ -1,8 +1,8 @@
 import { Inject, Injectable } from '@nestjs/common';
+import { Client } from '@elastic/elasticsearch';
 import {
   BulkIndexDocumentsParams,
   ClearScrollParams,
-  Client,
   CountParams,
   CountResponse,
   CreateDocumentParams,
@@ -12,8 +12,6 @@ import {
   DeleteDocumentResponse,
   DeleteScriptParams,
   ExistsParams,
-  FieldStatsParams,
-  FieldStatsResponse,
   GetParams,
   GetResponse,
   GetSourceParams,
@@ -26,7 +24,7 @@ import {
   UpdateDocumentByQueryResponse,
   UpdateDocumentParams,
   ScrollParams
-} from 'elasticsearch';
+} from '@elastic/elasticsearch/api';
 import { bindNodeCallback, Observable } from 'rxjs';
 import { ELASTICSEARCH_CLIENT } from './elasticsearch-client.provider';
 
@@ -122,12 +120,6 @@ export class ElasticsearchService {
 
   bulk(params: BulkIndexDocumentsParams): Observable<any> {
     return bindNodeCallback(this.bindClientContext(this.esClient.bulk))(params);
-  }
-
-  fieldStats(params: FieldStatsParams): Observable<FieldStatsResponse> {
-    return (bindNodeCallback(this.bindClientContext(this.esClient.fieldStats))(
-      params
-    ) as any) as Observable<FieldStatsResponse>;
   }
 
   get<T = any>(params: GetParams): Observable<GetResponse<T>> {
